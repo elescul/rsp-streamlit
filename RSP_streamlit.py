@@ -1,4 +1,3 @@
-from matplotlib.pyplot import rc
 import streamlit as st
 import pandas as pd
 from docxtpl import DocxTemplate
