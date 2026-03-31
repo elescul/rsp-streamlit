@@ -1,0 +1,7 @@
+streamlit
+pandas
+docxtpl
+num2words
+openpyxl
+python-docx
+lxml
