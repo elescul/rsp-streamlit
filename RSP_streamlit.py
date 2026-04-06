@@ -175,8 +175,8 @@ def procesar(archivo_excel, per, parametro, dias_num):
                 }
 
                 for plant, name in [
-                    (os.path.join(BASE_DIR, 'templates', 'modelo_informe_GE.docx'), f"(Cod {cod_cia}) {nom_cia}_RSP juicios.docx"),
-                    (os.path.join(BASE_DIR, 'templates', 'modelo_informe_auditor.docx'), f"(Cod {cod_cia}) {nom_cia}_RSP juicios_{nombre_auditor}.docx")
+                    (os.path.join(BASE_DIR, 'templates', 'modelo_informe_GE.docx'), f"(Cod {format_cia}) {nom_cia}_RSP juicios.docx"),
+                    (os.path.join(BASE_DIR, 'templates', 'modelo_informe_auditor.docx'), f"(Cod {format_cia}) {nom_cia}_RSP juicios_{nombre_auditor}.docx")
                 ]:
                     doc = DocxTemplate(plant)
                     doc.render(context)
