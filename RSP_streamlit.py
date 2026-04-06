@@ -47,10 +47,14 @@ def procesar(archivo_excel, per, parametro, dias_num):
         except:
             return "0"
 
+    def formatear_numero(n: int) -> str:
+        return str(n).zfill(4)
+
     with zipfile.ZipFile(zip_buffer, "w") as zf:
         for cia in cias_caen:
             try:
                 cod_cia = cia
+                format_cia = formatear_numero(cia)
                 nom_cia = den[den['cod_cia'] == cod_cia]['des_cia'].iloc[0]
                 corta_cia = den[den['cod_cia'] == cod_cia]['denominacion_corta'].iloc[0]
                 nombre_auditor = auditores[auditores['Cod'] == cod_cia]['AUDITOR'].iloc[0]
@@ -131,6 +135,7 @@ def procesar(archivo_excel, per, parametro, dias_num):
                 context = {
                     "nom_cia": nom_cia,
                     "cod_cia": cod_cia,
+                    "format_cia": format_cia,
                     "periodo": per,
                     "fecha_per": fecha_per,
                     "auto_flag": auto_flag,
